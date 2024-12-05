@@ -1,4 +1,4 @@
-# SL Micro 6 and above
+# SL Micro 6
 
 ## Enable SLEM Extras
 - transactional-update register -p SL-Micro-Extras/6.0/x86_64
@@ -24,4 +24,4 @@
 ```
 
 ## Deploy the nvidia-device-plugin
-    - GPU will be annotated with gpu/nvidia
+- GPU will be annotated with gpu/nvidia
