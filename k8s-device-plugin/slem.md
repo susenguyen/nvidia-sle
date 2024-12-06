@@ -53,7 +53,17 @@ zypper in nvidia-compute-utils-G06=550.90.12-1 nvidia-driver-G06-kmp-default=550
 ```
 
 ## Deploy the nvidia-device-plugin
+- Deploy the device plugin daemonset
+```
+kubectl apply -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/refs/heads/main/deployments/static/nvidia-device-plugin.yml
+```
 - GPU will be annotated with gpu/nvidia
+```
+Capacity:
+  ...
+  nvidia.com/gpu:     1
+  pods:               110
+```
 
 ## Start test pod
 ```
@@ -64,7 +74,7 @@ metadata:
 spec:
   containers:
     - name: ollama
-      image: ollama/ollama:0.4.6
+      image: ollama/ollama:0.3.6
       imagePullPolicy: IfNotPresent
       resources:
         limits:
