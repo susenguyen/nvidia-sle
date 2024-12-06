@@ -21,7 +21,37 @@
 - configure /var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
     - add:
 ```
+[plugins."io.containerd.grpc.v1.cri".containerd]
+  ...
+  default_runtime_name = "nvidia" 
+...
+
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes."nvidia"]
+  privileged_without_host_devices = false
+  runtime_engine = ""
+  runtime_root = ""
+  runtime_type = "io.containerd.runc.v2"
+
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes."nvidia".options]
+  BinaryName = "/usr/bin/nvidia-container-runtime"
+  SystemdCgroup = true
 ```
 
 ## Deploy the nvidia-device-plugin
 - GPU will be annotated with gpu/nvidia
+
+## Start test pod
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ollama
+spec:
+  containers:
+    - name: ollama
+      image: ollama/ollama:0.4.6
+      imagePullPolicy: IfNotPresent
+      resources:
+        limits:
+          nvidia.com/gpu: 1
+```
