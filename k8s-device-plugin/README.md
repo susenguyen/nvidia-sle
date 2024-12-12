@@ -81,7 +81,7 @@ spec:
           nvidia.com/gpu: 1
 ```
 
-## Time Slicing
+## Time Slicing (OPTIONAL)
 - Create the config map
 ```
 apiVersion: v1
