@@ -120,10 +120,6 @@ spec:
       - key: nvidia.com/gpu
         operator: Exists
         effect: NoSchedule
-      # Mark this pod as a critical add-on; when enabled, the critical add-on
-      # scheduler reserves resources for critical add-on pods so that they can
-      # be rescheduled after a failure.
-      # See https://kubernetes.io/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/
       priorityClassName: "system-node-critical"
       containers:
       - image: nvcr.io/nvidia/k8s-device-plugin:v0.17.0
@@ -134,8 +130,6 @@ spec:
             value: "false"
           - name: CONFIG_FILE
             value: "/etc/time-slicing/config.cfg"
-          - name: MPS_ROOT
-            value: "/run/nvidia/mps"
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
@@ -197,10 +191,6 @@ spec:
       - key: nvidia.com/gpu
         operator: Exists
         effect: NoSchedule
-      # Mark this pod as a critical add-on; when enabled, the critical add-on
-      # scheduler reserves resources for critical add-on pods so that they can
-      # be rescheduled after a failure.
-      # See https://kubernetes.io/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/
       priorityClassName: "system-node-critical"
       containers:
       - image: nvcr.io/nvidia/k8s-device-plugin:v0.17.0
@@ -211,6 +201,8 @@ spec:
             value: "false"
           - name: CONFIG_FILE
             value: "/etc/mps/config.cfg"
+          - name: MPS_ROOT
+            value: "/run/nvidia/mps"
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
