@@ -31,6 +31,7 @@ zypper ar https://developer.download.nvidia.com/compute/cuda/repos/sles15/x86_64
 ```
 zypper in nvidia-compute-utils-G06=550.90.12-1 nvidia-driver-G06-kmp-default=550.90.12_k4.12.14_150.47-1 libnvidia-container1 nvidia-container-toolkit
 ```
+- Reboot the system
 
 ## Configure Runtime
 - configure /var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
