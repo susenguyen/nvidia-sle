@@ -134,6 +134,8 @@ spec:
             value: "false"
           - name: CONFIG_FILE
             value: "/etc/time-slicing/config.cfg"
+          - name: MPS_ROOT
+            value: "/run/nvidia/mps"
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
