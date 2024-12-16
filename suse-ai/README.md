@@ -35,12 +35,25 @@ kubectl create secret -n suse-ai tls tls-owui-ingress --cert=server.crt --key=se
 ```
 - owui-values.yaml (using k3s local-path provisioner for persistent storage)
 ```
+global:
+  tls:
+    source: secret
+
+cert-manager:
+  enabled: false
+
 image:
   pullPolicy: IfNotPresent
 
+ollama:
+  enabled: false
+
+ollamaUrls:
+  - http://ollama:11434
+
 ingress:
   tls: true
-  host: "slem.suse.lab"
+  host: "k3s.suse.lab"
   existingSecret: "tls-owui-ingress"
 
 persistence:
