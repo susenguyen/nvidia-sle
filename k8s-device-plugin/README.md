@@ -33,7 +33,7 @@ zypper in nvidia-compute-utils-G06=550.127.08-1 nvidia-driver-G06-kmp-default=55
 ```
 - Reboot the system
 
-## Configure Runtime
+## Configure Runtime (not necessary if the nvidia utilities are installed before k3s)
 - configure /var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
     - add:
 ```
