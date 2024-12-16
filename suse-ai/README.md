@@ -49,5 +49,5 @@ persistence:
   storageClass: "local-path"
 ```
 ```
-helm install open-webui --namespace=suse-ai --value=open-webui-values.yaml oci://dp.apps.rancher.io/charts/open-webui
+helm install open-webui --namespace=suse-ai --values=owui-values.yaml oci://dp.apps.rancher.io/charts/open-webui
 ```
