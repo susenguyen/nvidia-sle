@@ -1,5 +1,23 @@
 # Cookbooks to deploy SUSE AI
 
+## Add registry.yaml
+```
+mirrors:
+  dp.apps.rancher.io:
+    endpoint:
+      - "https://dp.apps.rancher.io"
+configs:
+  "dp.apps.rancher.io":
+    auth:
+      username: XXX@email.com
+      password: XYW==
+```
+
+## Helm login
+```
+helm registry login dp.apps.rancher.io/charts -u XXX@email.com -p XYW==
+```
+
 ## ollama
 - ollama-values.yaml (using k3s local-path provisioner for persistent storage)
 ```
