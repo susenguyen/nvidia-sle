@@ -54,7 +54,7 @@ zypper in nvidia-compute-utils-G06=550.127.08-1 nvidia-driver-G06-kmp-default=55
 ```
 
 ## Configure Runtime (CURRENT CONFIGURATION)
-- Configure k3s to launch with the following option (via systemd or other):
+- Configure k3s to launch with the following option:
 ```
 --default-runtime nvidia
 ```
