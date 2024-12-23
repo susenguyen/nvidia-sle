@@ -33,7 +33,7 @@ zypper in nvidia-compute-utils-G06=550.127.08-1 nvidia-driver-G06-kmp-default=55
 ```
 - Reboot the system
 
-## Configure Runtime
+## Configure Runtime (OBSOLETE - SEE NEXT SECTION FOR CURRENT CONFIGURATION)
 - configure /var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
     - add:
 ```
@@ -51,6 +51,12 @@ zypper in nvidia-compute-utils-G06=550.127.08-1 nvidia-driver-G06-kmp-default=55
 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes."nvidia".options]
   BinaryName = "/usr/bin/nvidia-container-runtime"
   SystemdCgroup = true
+```
+
+## Configure Runtime (CURRENT CONFIGURATION)
+- Configure k3s to launch with the following option (via systemd or other):
+```
+--default-runtime nvidia
 ```
 
 ## Deploy the nvidia-device-plugin
