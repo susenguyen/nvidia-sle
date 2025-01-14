@@ -1,6 +1,6 @@
 # Cookbooks to deploy SUSE AI
 
-## Add registries.yaml
+## Add registries.yaml (not necessary with the application-collection secret)
 ```
 mirrors:
   dp.apps.rancher.io:
@@ -13,6 +13,16 @@ configs:
       password: XYW==
 ```
 
+## Create the application-collection secret
+- Create the suse-ai namespace
+```
+kubectl create ns suse-ai
+```
+- Create the secret
+```
+kubectl create secret docker-registry application-collection --docker-server=dp.apps.rancher.io --docker-username=XXX@email.com --docker-password="XYW==" -n suse-ai
+```
+
 ## Helm login
 ```
 helm registry login dp.apps.rancher.io/charts -u XXX@email.com -p XYW==
@@ -21,6 +31,10 @@ helm registry login dp.apps.rancher.io/charts -u XXX@email.com -p XYW==
 ## ollama
 - ollama-values.yaml (using k3s local-path provisioner for persistent storage)
 ```
+global:
+  imagePullSecrets:
+  - application-collection
+
 ollama:
   gpu:
     enabled: true
