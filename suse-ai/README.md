@@ -1,6 +1,6 @@
 # Cookbooks to deploy SUSE AI
 
-## Add registry.yaml
+## Add registries.yaml
 ```
 mirrors:
   dp.apps.rancher.io:
