@@ -70,6 +70,8 @@ kubectl create secret -n suse-ai tls tls-owui-ingress --cert=server.crt --key=se
 global:
   tls:
     source: secret
+  imagePullSecrets:
+  - application-collection
 
 cert-manager:
   enabled: false
