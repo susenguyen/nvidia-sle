@@ -40,7 +40,7 @@ helm repo add nvidia https://helm.ngc.nvidia.com/nvidia && helm repo update
 ```
 - Prepare the values.yaml file
 ```
-oolkit:
+toolkit:
   env:
   - name: CONTAINERD_CONFIG
     value: /var/lib/rancher/rke2/agent/etc/containerd/config.toml.tmpl
