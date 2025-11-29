@@ -1,10 +1,10 @@
-# SL Micro 6
+# SL Micro 6.1.1
 
 ## Enable SLEM Extras
 - Open a transactional-update shell and then
 
 ```
-SUSEConnect -p SL-Micro-Extras/6.0/x86_64
+SUSEConnect -p SL-Micro-Extras/6.1/x86_64
 ```
 
 ## Deploy C++ dependencies
@@ -23,13 +23,13 @@ zypper in gcc gcc-build-PIE gcc-build gcc-build-c++
 zypper ar https://developer.download.nvidia.com/compute/cuda/repos/sles15/x86_64/ nvidia
 ```
 
-- Install (Install version 550 (the most recent in this version is ok)
-    - nvidia-compute-utils-G06=550.127.08-1
-    - nvidia-driver-G06-kmp-default=550.127.08_k5.14.21_150500.55.83-1
+- Install (Install version 580.95 (the most recent in this version is ok)
+    - nvidia-compute-utils-G06=580.95.05_k6.4.0_34-1.1
+    - nvidia-driver-G06-kmp-default=580.95.05_k6.4.0_34-1.1
     - [only with device-plugin] libnvidia-container1
     - [only with device-plugin] nvidia-container-toolkit
 ```
-zypper in nvidia-compute-utils-G06=550.127.08-1 nvidia-driver-G06-kmp-default=550.127.08_k5.14.21_150500.55.83-1 libnvidia-container1 nvidia-container-toolkit
+zypper in nvidia-compute-utils-G06=580.95.05_k6.4.0_34-1.1 nvidia-driver-G06-kmp-default=580.95.05_k6.4.0_34-1.1 libnvidia-container1 nvidia-container-toolkit
 ```
 - Reboot the system
 
