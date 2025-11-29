@@ -24,12 +24,12 @@ zypper ar https://developer.download.nvidia.com/compute/cuda/repos/sles15/x86_64
 ```
 
 - Install (Install version 580.95 (the most recent in this version is ok)
-    - nvidia-compute-utils-G06=580.95.05_k6.4.0_34-1.1
-    - nvidia-driver-G06-kmp-default=580.95.05_k6.4.0_34-1.1
+    - nvidia-compute-utils-G06-570.195.03-1
+    - nvidia-driver-G06-kmp-default-570.195.03-1
     - [only with device-plugin] libnvidia-container1
     - [only with device-plugin] nvidia-container-toolkit
 ```
-zypper in nvidia-compute-utils-G06=580.95.05_k6.4.0_34-1.1 nvidia-driver-G06-kmp-default=580.95.05_k6.4.0_34-1.1 libnvidia-container1 nvidia-container-toolkit
+zypper in nvidia-compute-utils-G06=570.195.03-1 nvidia-driver-G06-kmp-default=570.195.03-1 libnvidia-container1 nvidia-container-toolkit
 ```
 - Reboot the system
 
